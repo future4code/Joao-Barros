@@ -1,0 +1,15 @@
+Me chamo João Pedro Correia Barros,
+
+Tenho vinte e oito anos e sou de São Paulo.
+
+Minha cor favorita é vermelho e gosto de jogos de computador.
+
+Acredito que minha paixão por programação venha dessa natureza de gamer, a cada passo que vou descubrindo mais ferramentas necessárias para a criação dos jogos que eu gosto, mais eu apaixono pela arte de programar.
+
+Vejo a programação commo uma área infinita, é como uma arte onde o meio é o computador e o final são as pessoas.
+
+Sou formado em Administração de Empresas e desde então venho dedicando meu tempo em aprender a programar.
+
+Estou há um ano em cantato com os códigos e acredito que estou evoluindo bem. Já consigo montar uma estrutura em HTML, fazer funções em javascript e estilizações em CSS.
+
+Tenho um Github com uns repos já e pretendo agora adicionar um projeto legal e próprio lá.
