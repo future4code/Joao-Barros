@@ -88,3 +88,49 @@ adicionaNoCarrinho(fruta1, fruta2, fruta3)
 
 // d
 console.log(carrinho)
+
+// desafios
+
+// 1
+const criaPessoa = () => {
+
+  const nome = prompt("Nome")
+  const idade = prompt("Idade")
+  const profissao = prompt("Profissao")
+
+  const pessoa = {
+    nome: nome,
+    idade: idade,
+    profissao: profissao
+  }
+  console.log(pessoa)
+  console.log(typeof pessoa)
+
+
+}
+// criaPessoa()
+
+// 2
+const recebeFilmes = () => {
+
+  const lancamento1 = Number(prompt("Ano de lancamento"))
+  const nome1 = Number(prompt("Nome do filme"))
+
+  const lancamento2 = Number(prompt("Ano de lancamento do segundo filme"))
+  const nome2 = Number(prompt("Nome do outro filme"))
+
+  const verificacao = lancamento1 > lancamento2
+  const mesmoAno = lancamento1 = lancamento2
+
+  console.log("O primeiro filme foi lançado antes do segundo?", verificacao)
+  console.log("O primeiro filme foi lançado no mesmo ano do segundo?", mesmoAno)
+}
+
+// 3
+const checaDisponibilidade = (object) => {
+
+  const disponibilidade = {...object, disponibilidade: false}
+
+  return disponibilidade
+}
+console.log(checaDisponibilidade(fruta1))
