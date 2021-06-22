@@ -111,20 +111,25 @@ const criaPessoa = () => {
 // criaPessoa()
 
 // 2
-const recebeFilmes = () => {
+const filmes = () => {
 
-  const lancamento1 = Number(prompt("Ano de lancamento"))
-  const nome1 = Number(prompt("Nome do filme"))
+  const filme1 = {
+    nome: "Laranja Mecânica",
+    lancamento: 1971
+  }
 
-  const lancamento2 = Number(prompt("Ano de lancamento do segundo filme"))
-  const nome2 = Number(prompt("Nome do outro filme"))
+  const filme2 = {
+    nome: "Pulp Fiction",
+    lancamento: 1994
+  }
 
-  const verificacao = lancamento1 > lancamento2
-  const mesmoAno = lancamento1 = lancamento2
+  const verificacao = filme1.lancamento > filme2.lancamento
+  const mesmoAno = filme1.lancamento === filme2.lancamento
 
   console.log("O primeiro filme foi lançado antes do segundo?", verificacao)
   console.log("O primeiro filme foi lançado no mesmo ano do segundo?", mesmoAno)
 }
+filmes()
 
 // 3
 const checaDisponibilidade = (object) => {
