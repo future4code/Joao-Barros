@@ -54,7 +54,7 @@ const produtos = [
 ]
 // b
 const desconto = produtos.map(({ nome, preco }) => {
-  const precoFinal = +(preco - preco * 0.05).toFixed([2])
+  const precoFinal = (preco * 0.95).toFixed([2])
 
   return {
     nome: nome,
