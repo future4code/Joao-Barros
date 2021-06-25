@@ -21,7 +21,7 @@ if(confirm("Quer iniciar uma nova rodada?")) {
    console.log(cartasUser, cartasPc)
 
    const somaUser = cartasUser[0].valor + cartasUser[1].valor;
-   const somaPc = cartasPc[0].valor + cartasPc[1];
+   const somaPc = cartasPc[0].valor + cartasPc[1].valor;
 
    console.log(`O usuário somou ${somaUser}.`)
    console.log(`O computador somou ${somaPc}.`)
