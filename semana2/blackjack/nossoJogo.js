@@ -23,23 +23,15 @@ if(confirm("Quer iniciar uma nova rodada?")) {
    const somaUser = cartasUser[0].valor + cartasUser[1].valor;
    const somaPc = cartasPc[0].valor + cartasPc[1].valor;
 
-   console.log(`O usuário somou ${somaUser}.`)
-   console.log(`O computador somou ${somaPc}.`)
-
-   if (somaUser > 21) {
-      console.log("O computador ganhou dessa vez!")
-   }
-
-   if (somaUser < 21) {
-      console.log("O usuario ganhou dessa vez!")
-   }
+   console.log(`Usuário - cartas: ${cartasUser[0].texto} ${cartasUser[1].texto} - pontuação ${somaUser}`)
+   console.log(`Computador - cartas: ${cartasPc[0].texto} ${cartasPc[1].texto} - pontuação ${somaPc}`)
 
    if (somaUser === somaPc) {
       console.log("Deu empate!")
    } else if (somaUser > somaPc) {
-      console.log("O usuário ganhou dessa vez!")
+      console.log("O usuário ganhou!")
    } else if (somaUser < somaPc) {
-      console.log("O computador ganhou dessa vez!")
+      console.log("O computador ganhou!")
    }
 
 } else {
