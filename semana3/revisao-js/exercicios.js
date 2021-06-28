@@ -58,24 +58,52 @@ function retornaExpressoesBooleanas() {
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-
-}
+  let numerosPares = [];
+  let par = 0;
+  let i = 0;
+  while (i < n) {
+      numerosPares.push(par);
+      par += 2;
+      i++;
+    }
+    return numerosPares;
+  }
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  // return 'Escaleno'
-  // return 'Equilátero'
-  // return 'Isósceles'
+  const equilatero = "Equilátero";
+  const isoceles = "Isósceles";
+  const escoleno = "Escaleno";
+  if (a === b && a === c) {
+    return equilatero;
+  } else if (a === b && a !== c) {
+    return isoceles;
+  } else {
+    return escoleno;
+  }
 }
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
-  // Formato do objeto a ser retornado:
-  // {
-  //   maiorNumero: X,
-  //   maiorDivisivelPorMenor: Y,
-  //   diferenca: Z
-  // }
+  let bigger;
+  let smaller;
+  if(num1 > num2){
+    bigger = num1;
+    smaller = num2;
+  }
+  if(num2 > num1){
+    bigger = num2;
+    smaller = num1;
+  }
+
+  const majorDivisibleByMinor = bigger % smaller === 0;
+  const difference = bigger - smaller;
+  console.log(bigger, smaller)
+  return {
+    maiorNumero: bigger,
+    maiorDivisivelporMenor: majorDivisibleByMinor,
+    diferenca: difference,
+  };
 }
 
 // EXERCÍCIO 10
