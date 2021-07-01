@@ -63,6 +63,14 @@ div img {
     height: 15px;
 }
 
+.icone:hover {
+    opacity: 50%;
+}
+
+.icone:active {
+    opacity: 100%;
+}
+
 
 /** 
   *
@@ -149,4 +157,9 @@ td button:active {
     padding: 100px;
     display: flex;
     justify-content: center;
+}
+
+.lista {
+    width: 300px;
+    margin: 0 auto;
 }
