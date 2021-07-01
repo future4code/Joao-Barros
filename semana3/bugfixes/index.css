@@ -106,6 +106,7 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    margin: auto;
 }
 
 td button {
@@ -142,4 +143,10 @@ td button:active {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.botao-voltar {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
 }
