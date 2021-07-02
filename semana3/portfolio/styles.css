@@ -34,6 +34,10 @@ footer {
   border: 1px solid black;
 }
 
+.sobre h3 {
+  color: #22333b;
+}
+
 .sobre p {
   margin-top: 20px;
 }
@@ -87,6 +91,7 @@ footer {
 .titulo-projetos {
   text-align: center;
   padding: 30px;
+  color: #22333b;
 }
 
 .lista-exp h5 {
