@@ -4,23 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="index.css">
     <title>Controle de Estoque</title>
 </head>
 <body>
-    <div>
-        <p>Vintage House</p>
+    <div class="cabecalho">
+        <h1 class="nome-loja">Vintage House</h1>
     </div>
     
-    <div>
-        <a href="/semana3/sistema-loja/index.html">Página Inicial</a>
-        <a href="/semana3/sistema-loja/ctrl-estoque.html">Controle de Estoque</a>
-        <a href="/semana3/sistema-loja/add-produto.html">Adicionar Produto</a>
-        <a href="/semana3/sistema-loja/funcionarios.html">Funcionários</a>
+    <div class="navegacao">
+        <a class="botao-navegacao" href="/semana3/sistema-loja/index.html">Página Inicial</a>
+        <a class="botao-navegacao" href="/semana3/sistema-loja/ctrl-estoque.html">Controle de Estoque</a>
+        <a class="botao-navegacao" href="/semana3/sistema-loja/add-produto.html">Adicionar Produto</a>
+        <a class="botao-navegacao" href="/semana3/sistema-loja/funcionarios.html">Funcionários</a>
+        <a class="botao-navegacao" href="/semana3/sistema-loja/vendas.html">Página de Venda</a>
+        <a class="botao-navegacao" href="/semana3/sistema-loja/hist-vendas.html">Página de Histórico de Vendas</a>
     </div>
 
-    <h2>Controle de Estoque</h2>
+    <h2 class="titulo-formulario">Controle de Estoque</h2>
 
-    <table>
+    <table class="tabela-de-estoque">
         <tr>
             <th>Foto</th>
             <th>Descrição</th>
@@ -29,42 +32,51 @@
         </tr>
 
         <tr>
-            <td><img src="./img/pc.jpg" alt="Desktop."/></td>
+            <td><img class="img-produtos" src="./img/pc.jpg" alt="Desktop."/></td>
             <td>Desktop</td>
             <td>5.000,00</td>
             <td>10</td>
         </tr>
 
         <tr>
-            <td><img src="./img/note.jpg" alt="Notebook."/></td>
+            <td><img class="img-produtos" src="./img/note.jpg" alt="Notebook."/></td>
             <td>Notebook</td>
             <td>8.000,00</td>
             <td>15</td>
         </tr>
 
         <tr>
-            <td><img src="./img/monitor.jpg" alt="Monitor de computador."/></td>
+            <td><img class="img-produtos" src="./img/monitor.jpg" alt="Monitor de computador."/></td>
             <td>Monitor</td>
             <td>1.500,00</td>
             <td>20</td>
         </tr>
 
         <tr>
-            <td><img src="./img/teclado.jpg" alt="Teclado para computador."/></td>
+            <td><img class="img-produtos" src="./img/teclado.jpg" alt="Teclado para computador."/></td>
             <td>Teclado</td>
             <td>500,00</td>
             <td>30</td>
         </tr>
-        
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
+
         <tr>
-            <td><img src="./img/mouse.jpg" alt="Mouse para computador."/></td>
+            <td><img class="img-produtos" src="./img/mouse.jpg" alt="Mouse para computador."/></td>
             <td>Mouse</td>
             <td>200,00</td>
             <td>30</td>
         </tr>
 
     </table>
+
+    <div class="footer">
+        <p class="subtitulo">Siga-nos nas redes sociais!</p>
+
+        <div class="imagens-footer">
+            <img class="logos" src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
+            <img class="logos" src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
+            <img class="logos" src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+        </div>
+    </div>
 
 </body>
 </html>
