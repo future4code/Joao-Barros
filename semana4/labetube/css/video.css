@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 .geral {
@@ -46,6 +47,10 @@ main {
 }
 
 .videos h1 {
+  color: #baabbd;
+}
+
+.videos h3 {
   color: #baabbd;
 }
 
