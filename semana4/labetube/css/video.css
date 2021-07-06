@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.geral {
+  display: grid;
+  grid-template-rows: 60px 1fr 60px;
+}
+
