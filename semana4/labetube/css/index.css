@@ -65,3 +65,16 @@ footer {
 footer h3 {
   color: #c9c9ee;
 }
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .video {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+  .video {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8, 1fr);
+  }
+}
