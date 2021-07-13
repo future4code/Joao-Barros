@@ -14,17 +14,17 @@
 // _____________Exercícios de escrita de código____________
 
 // 1
-// const bichinhos = Number(prompt("Digite quantos bichinho você tem:"))
-// let nomeBichinhos = []
-// if (bichinhos === 0) {
-//   console.log("Que pena! Você pode adotar um pet!")
-// } else {
-//   for (let i = 0; i < bichinhos; i++) {
-//     const nome = prompt("Digite o nome deles")
-//     nomeBichinhos.push(nome)
-//   }
-// }
-// console.log(nomeBichinhos)
+const bichinhos = Number(prompt("Digite quantos bichinho você tem:"))
+let nomeBichinhos = []
+if (bichinhos === 0) {
+  console.log("Que pena! Você pode adotar um pet!")
+} else {
+  for (let i = 0; i < bichinhos; i++) {
+    const nome = prompt("Digite o nome deles")
+    nomeBichinhos.push(nome)
+  }
+}
+console.log(nomeBichinhos)
 
 // 2
 const arrayOriginal = [1, 2, 3, 4, 5, 6, 7, 8, 9]
