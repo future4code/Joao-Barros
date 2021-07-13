@@ -6,6 +6,9 @@ import CardPequeno from './components/CardPequeno/CardPequeno';
 import foto from './img/bear.jpg';
 import email from './img/email.png';
 import mapa from './img/map.png';
+import Exp from './components/Experiencia/Exp'
+import labenu from './img/labenu.gif';
+import anhembi from './img/anhembi.jpg';
 
 function App() {
   return (
@@ -35,6 +38,20 @@ function App() {
           imagem={mapa}
           nome="Endereço"
           descricao="Rua dos bobos"
+        />
+      </div>
+      <div className="page-section-container">
+        <h2>Experiências acadêmica</h2>
+        <Exp 
+          imagem={labenu}
+          nome="Labenu" 
+          descricao="cara na boa sem paciencia pra preencher isso em todo lugar, to no linkedin." 
+        />
+        
+        <Exp 
+          imagem={anhembi}
+          nome="Anhembi Morumbi" 
+          descricao="mesma coisa de cima." 
         />
       </div>
       <div className="page-section-container">
