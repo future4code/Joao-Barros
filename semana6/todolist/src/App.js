@@ -26,11 +26,13 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-
+    localStorage.setItem("tarefa", JSON.stringify(this.state.tarefas))
   };
 
   componentDidMount() {
-
+    const tarefaString = localStorage.getItem("tarefa");
+    const tarefaObject = JSON.parse(tarefaString);
+    return tarefaObject
   };
 
   onChangeInput = (event) => {
@@ -45,6 +47,7 @@ class App extends React.Component {
     }
     const novoArrayDeTarefas = [novaTarefa, ...this.state.tarefas]
     this.setState({tarefas: novoArrayDeTarefas})
+    this.setState({inputValue: ''})
   }
 
   selectTarefa = (id) => {
@@ -60,7 +63,7 @@ class App extends React.Component {
   }
 
   onChangeFilter = (event) => {
-
+    this.setState({filtro: event.target.value});
   }
 
   render() {
