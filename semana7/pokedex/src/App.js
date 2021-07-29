@@ -2,6 +2,11 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 export default class App extends React.Component {
   state = {
     pokemons: [],
@@ -38,15 +43,17 @@ export default class App extends React.Component {
     });
     return (
       <div>
-        <header>
+        <header style={{textAlign: 'center', color: '#ffae42'}}>
           <h1>Pokédex</h1>
         </header>
-        <main>
-          {this.state.picture &&
-            <img src={this.state.picture} alt={'foto do pokemon'}/>
-          }
-          <h3>{this.state.name}</h3>
-          <select onChange={this.getInfo}>{pokemonsList}</select>
+        <main style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+          <Container>
+            {this.state.picture &&
+              <img src={this.state.picture} alt={'foto do pokemon'}/>
+            }
+            <h3>{this.state.name}</h3>
+            <select onChange={this.getInfo}>{pokemonsList}</select>
+          </Container>
         </main>
       </div>
     );
