@@ -17,11 +17,13 @@ class App extends React.Component {
     return (
       <div>
         {this.state.paginaInicial ? <Login /> : <Lista />}
-        <button onClick={this.changePage}>
-          {this.state.paginaInicial
-            ? "Ir para pagina de lista"
-            : "Ir para pagina de login"}
-        </button>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <button onClick={this.changePage}>
+            {this.state.paginaInicial
+              ? "Ir para pagina de lista"
+              : "Ir para pagina de login"}
+          </button>
+        </div>
       </div>
     );
   }

@@ -40,10 +40,10 @@ class Login extends React.Component {
         axios
           .post(url, body, headers)
           .then(() => {
-            alert("Usuario criado com sucesso!")
+            alert("Usuario criado com sucesso!");
           })
           .catch(() => {
-            alert("Verifique os dados preenchidos e tente novamente.")
+            alert("Verifique os dados preenchidos e tente novamente.");
           });
       };
 
@@ -51,7 +51,15 @@ class Login extends React.Component {
     };
 
     return (
-      <form>
+      <form
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+          alignItems: "center",
+          height: "200px",
+        }}
+      >
         <Input
           value={this.state.inputNameValue}
           event={this.onChangeName}
