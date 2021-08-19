@@ -1,19 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 
 const LoginPage = () => {
   const { data, request } = useAuth();
+  const [ values, setValues ] = useState({
+    email: "",
+    password: ""
+  })
 
-  const getInfoAdmin = async () => {
+  const getInfoAdmin = () => {
     
     const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/joao-barros-lovelace/login";
     const body = {
-      email: "astrodev@gmail.com.br",
-      password: "123456"
+      email: values.email.trim(),
+      password: values.password.trim()
     };
     const header = {
-      ContentType: "application/json"
+      "Content-Type": "application/json"
     };
     const method = "POST";
 
@@ -22,11 +26,19 @@ const LoginPage = () => {
   }
 
   useEffect(() => getInfoAdmin(), [request])
+
+  const handleInputChange = (event) => {
+    const {name, value} = event.target
+    setValues({
+      ...values,
+      [name]: value
+    })
+  }
   
   return (
     <div>
-      <input placeholder={"E-mail"} />
-      <input placeholder={"Senha"} />
+      <input placeholder={"E-mail"} onChange={handleInputChange} />
+      <input placeholder={"Senha"} onChange={handleInputChange} />
       <br />
       <Link to={"/"}>Voltar</Link>
       <Link to={"/AdminHomePage"} onClick={getInfoAdmin}>Entrar</Link>

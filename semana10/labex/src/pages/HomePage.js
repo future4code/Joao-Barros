@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   
   return (
     <div>
-      <p>Home Page</p>
+      <h2>LabeX</h2>
+      <Link to={"/ListTripsPage"}>Lista de Viagens</Link>
+      <Link to={"/LoginPage"}>Administrador</Link>
     </div>
   );
 };
