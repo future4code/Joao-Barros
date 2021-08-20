@@ -1,61 +1,62 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-import useAuth from '../hooks/useAuth';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const LoginPage = () => {
-  const { loading, request } = useAuth();
+  const [data, loading, error, request] = useAuth();
   const [values, setValues] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
+  const history = useHistory();
 
-  const getInfoAdmin = async () => {
-    const url =
-      'https://us-central1-labenu-apis.cloudfunctions.net/labeX/thiago-santiago-lovelace/login';
-    const body = {
-      email: values.email.trim(),
-      password: values.password.trim(),
-    };
-    const headers = {
-      ContentType: 'application/json',
-    };
-    const method = 'post';
-
-    const { response } = await request(url, body, { headers }, method);
-    localStorage.setItem('token', response.data.token);
-    console.log(response)
+  const submitLogin = (e) => {
+    e.preventDefault()
+    request(
+      'https://us-central1-labenu-apis.cloudfunctions.net/labeX/joao-barros-lovelace/login',
+      { email: values.email, password: values.password },
+      { header: { ContentType: 'application/json' } },
+      'post'
+    )
+    data &&
+      localStorage.setItem('token', data.data.token);
+      history.push('/AdminHomePage');
+    error && alert(error.response.data.message);
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setValues({
       ...values,
       [name]: value,
     });
   };
+
   return (
     <div>
-      <input
-        placeholder={'E-mail'}
-        name="email"
-        value={values.email}
-        onChange={handleInputChange}
-      />
-      <input
-        placeholder={'Senha'}
-        name="password"
-        value={values.password}
-        onChange={handleInputChange}
-      />
-      <br />
-      <Link to={'/'}>Voltar</Link>
-      <Link
-        to={'/AdminHomePage'}
-        onClick={getInfoAdmin}
-      >
-        {loading ? 'Carregando' : ' entrar'}
-      </Link>
+      <h2>Login</h2>
+      <form onSubmit={submitLogin}>
+        <input
+          placeholder="E-mail"
+          name="email"
+          value={values.email}
+          onChange={handleInputChange}
+          required
+          type="email"
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          name="password"
+          value={values.password}
+          onChange={handleInputChange}
+          required
+        />
+        <Link to={"/"}>
+          <button type="button">Voltar</button>
+        </Link>
+        <button type="submit">{loading ? "Carregando" : " entrar"}</button>
+      </form>
     </div>
   );
 };

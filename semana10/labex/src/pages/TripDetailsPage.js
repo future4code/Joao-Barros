@@ -18,7 +18,7 @@ const TripDetailsPage = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/thiago-santiago-lovelace/trip/${token}`;
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/joao-barros-lovelace/trip/${token}`;
     const headers = {
       headers: {
         ContentType: 'application/json',

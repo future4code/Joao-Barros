@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import useData from '../hooks/useAuth';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+import useProtectedPage from "../hooks/useProtectedPage";
 
 const AdminHomePage = () => {
-  const { loading, request } = useData();
+  const [data, loading, error, request] = useAuth();
   const [listTrips, setlistTrips] = useState([]);
+
+  useProtectedPage();
 
   const getTrips = async () => {
     const url =
-      'https://us-central1-labenu-apis.cloudfunctions.net/labeX/thiago-santiago-lovelace/trips';
-    const method = 'get';
+      "https://us-central1-labenu-apis.cloudfunctions.net/labeX/thiago-santiago-lovelace/trips";
+    const method = "get";
     const {
       response: {
         data: { trips: listTrips },
@@ -28,12 +31,14 @@ const AdminHomePage = () => {
 
   return (
     <div>
-      <p>AdminHomePage</p>
-      <Link to={'/'}>Voltar</Link>
-      <Link to={'/CreateTripPage'}>Criar Viagem</Link>
-      <button>Logout</button>
-
-      <section>{loading ? 'Carregando' : <ul>{renderAllTrips}</ul>}</section>
+      <h2>AdminHomePage</h2>
+      <Link to={"/"}>
+        <button>Voltar</button>
+      </Link>
+      <Link to={"/CreateTripPage"}>
+        <button>Criar Viagem</button>
+      </Link>
+      <section>{loading ? "Carregando" : <ul>{renderAllTrips}</ul>}</section>
     </div>
   );
 };
