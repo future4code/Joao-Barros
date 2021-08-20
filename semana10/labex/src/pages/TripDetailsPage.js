@@ -1,41 +1,50 @@
-import React, { useEffect, useHistory } from "react";
-import useAuth from "../hooks/useAuth";
-import axios from "axios";
+import React, { useEffect } from 'react';
+import useAuth from '../hooks/useAuth';
+import { useHistory } from 'react-router';
 
 const TripDetailsPage = () => {
   const { data, request } = useAuth();
 
-  const getTripDetails = (data, request) => {
-
-  }
-
   const history = useHistory();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem('token');
 
-    if(token === null) {
-      console.log("Nao esta logado")
-      history.push("/LoginPage")
+    if (token === null) {
+      console.log('Nao esta logado');
+      history.push('/LoginPage');
     }
   }, []);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    axios.get("https://us-central1-labenu-apis.cloudfunctions.net/labeX/joao-barros-lovelace/trip/HDg3stHNdBdbWzhp68Iy",
-    {
+    const token = localStorage.getItem('token');
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/thiago-santiago-lovelace/trip/${token}`;
+    const headers = {
       headers: {
-        auth: token
-      }
-    })
-      .then((response) => {
-        console.log(response.data)
-        localStorage.setItem("token", response.data.token)
-      }).catch((err) => {
-        console.log(err.response)
-      })
+        ContentType: 'application/json',
+        auth: token,
+      },
+    };
+    const method = 'get';
+
+    const getTripDetails = async () => {
+      request(url, undefined, headers, method)
+    };
+
+    // axios
+    //   .get(
+    //     ,
+    //     headers
+    //   )
+    //   .then((response) => {
+    //     console.log(response.data);
+    //     localStorage.setItem('token', response.data.token);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.response);
+    //   });
   }, []);
-  
+
   return (
     <div>
       <p>TripDetailsPage</p>

@@ -1,4 +1,4 @@
-import Router from './route/Router';
+import Router from './routes/Router';
 import './App.css';
 
 const App = () => {

@@ -1,47 +1,61 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import useAuth from '../hooks/useAuth';
 
 const LoginPage = () => {
-  const { data, request } = useAuth();
-  const [ values, setValues ] = useState({
-    email: "",
-    password: ""
-  })
+  const { loading, request } = useAuth();
+  const [values, setValues] = useState({
+    email: '',
+    password: '',
+  });
 
-  const getInfoAdmin = () => {
-    
-    const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/joao-barros-lovelace/login";
+  const getInfoAdmin = async () => {
+    const url =
+      'https://us-central1-labenu-apis.cloudfunctions.net/labeX/thiago-santiago-lovelace/login';
     const body = {
       email: values.email.trim(),
-      password: values.password.trim()
+      password: values.password.trim(),
     };
-    const header = {
-      "Content-Type": "application/json"
+    const headers = {
+      ContentType: 'application/json',
     };
-    const method = "POST";
+    const method = 'post';
 
-    request(url, body, { header }, method);
-    console.log(data)
-  }
-
-  useEffect(() => getInfoAdmin(), [request])
+    const { response } = await request(url, body, { headers }, method);
+    localStorage.setItem('token', response.data.token);
+    console.log(response)
+  };
 
   const handleInputChange = (event) => {
-    const {name, value} = event.target
+    const { name, value } = event.target;
     setValues({
       ...values,
-      [name]: value
-    })
-  }
-  
+      [name]: value,
+    });
+  };
   return (
     <div>
-      <input placeholder={"E-mail"} onChange={handleInputChange} />
-      <input placeholder={"Senha"} onChange={handleInputChange} />
+      <input
+        placeholder={'E-mail'}
+        name="email"
+        value={values.email}
+        onChange={handleInputChange}
+      />
+      <input
+        placeholder={'Senha'}
+        name="password"
+        value={values.password}
+        onChange={handleInputChange}
+      />
       <br />
-      <Link to={"/"}>Voltar</Link>
-      <Link to={"/AdminHomePage"} onClick={getInfoAdmin}>Entrar</Link>
+      <Link to={'/'}>Voltar</Link>
+      <Link
+        to={'/AdminHomePage'}
+        onClick={getInfoAdmin}
+      >
+        {loading ? 'Carregando' : ' entrar'}
+      </Link>
     </div>
   );
 };
