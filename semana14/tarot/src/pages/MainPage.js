@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import tarot from '../tarot.json';
 import styled from 'styled-components';
 import Header from '../components/Header';
@@ -19,11 +19,11 @@ const CardsContainer = styled.div`
 
 const MainPage = () => {
   const cards = tarot.cards;
+  const [newArray, setNewArray] = useState([])
 
   const imagesUrl = tarot.imagesUrl;
   const imageBackCard = tarot.imageBackCard;
 
-  useEffect(() => {})
 
   const showCards = cards.map((card) => {
     return <img key={card.name} src={`${imagesUrl}${card.image}`} alt={card.name} />;
@@ -43,7 +43,7 @@ const MainPage = () => {
     <MainContainer>
       <Header />
       <div>
-        <button onClick={() => shuffleArray()}>Jogar</button>
+        <button onClick={() => shuffleArray(cards)}>Jogar</button>
       </div>  
       <CardsContainer>{showCards}</CardsContainer>
     </MainContainer>
