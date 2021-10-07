@@ -2,7 +2,7 @@ import axios from 'axios';
 import { addressInfo } from '../types';
 
 export const getAddressInfo = async (
-  zipCode: number
+  zipCode: string
 ): Promise<addressInfo | null> => {
   try{
     const response: any = await axios.get(
