@@ -14,7 +14,7 @@ getAddressInfo("01414-003")
 
 transporter.sendMail({
   from: process.env.NODEMAILER_USER,
-  to: "johnnydovisconde@outlook.com",
+  to: "lsd.omg1943@gmail.com",
   subject: "Mensagem de exemplo",
   text: "Este é um texto de exemplo",
   html: `
